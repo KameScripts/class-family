@@ -1,9 +1,9 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
-      <h1 class="text-center mb-4 family-gold fw-bold">🔫 新規組員登録</h1>
+      <h1 class="text-center mb-4 family-gold fw-bold">新規組員登録</h1>
 
-      <%= form_with model: @user do |f| %>
+      <%= form_with model: @user, data: { controller: "auto-expand" } do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
         <%# ── DB に保存する項目 ── %>
@@ -88,19 +88,23 @@
 
             <div class="mb-3 mt-4">
               <label class="form-label family-gold fw-bold">◯体を処理する際に工夫していたこと</label>
-              <textarea class="form-control bg-secondary text-white border-0" rows="4" placeholder="具体的なエピソードをお聞かせください..."></textarea>
+              <textarea class="form-control bg-secondary text-white border-0 auto-expand"
+                        rows="3"
+                        placeholder="具体的なエピソードをお聞かせください..."></textarea>
             </div>
 
             <div class="mb-3">
               <label class="form-label family-gold fw-bold">目の前に困っている人がいたらどうしますか？</label>
-              <textarea class="form-control bg-secondary text-white border-0" rows="4" placeholder="あなたの行動指針をお聞かせください..."></textarea>
+              <textarea class="form-control bg-secondary text-white border-0 auto-expand"
+                        rows="3"
+                        placeholder="あなたの行動指針をお聞かせください..."></textarea>
             </div>
 
           </div>
         </div>
 
         <div class="text-center mt-4">
-          <%= f.submit '組に入る', class: 'btn btn-gold btn-lg px-5 fw-bold' %>
+          <%= f.submit '送信', class: 'btn btn-gold btn-lg px-5 fw-bold' %>
         </div>
       <% end %>
     </div>

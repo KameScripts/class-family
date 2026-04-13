@@ -1,6 +1,12 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+/* ── 筆書体フォント ── */
+.header-title {
+  font-family: 'Yuji Syuku', serif !important;
+  letter-spacing: 0.05em;
+}
+
 /* ── テーマカラー ── */
 $family-black: #1a1a1a;
 $family-gold:  #FFD700;
@@ -85,4 +91,12 @@ $family-gold:  #FFD700;
   background-color: $family-gold;
   color: $family-black;
   font-weight: bold;
+}
+
+/* ── 自動拡張テキストエリア ── */
+textarea.auto-expand {
+  overflow: hidden;
+  resize: none;
+  min-height: 80px;
+  transition: height 0.1s ease;
 }
