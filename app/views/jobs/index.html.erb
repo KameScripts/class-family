@@ -1,0 +1,33 @@
+<div class="container py-5">
+  <div class="d-flex align-items-center mb-5">
+    <h1 class="family-gold fw-bold mb-0">💼 シノギ一覧</h1>
+    <span class="badge bg-gold text-dark ms-3 fs-6"><%= @jobs.count %> 件</span>
+  </div>
+
+  <% if @jobs.empty? %>
+    <div class="text-center text-white-50 py-5">
+      <p class="fs-5">現在シノギはございません。</p>
+    </div>
+  <% else %>
+    <div class="row g-4">
+      <% @jobs.each do |job| %>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 job-card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span class="badge category-badge"><%= job.category %></span>
+              <small class="text-white-50">〆切: <%= job.deadline %></small>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title family-gold fw-bold"><%= job.title %></h5>
+              <p class="card-text text-white-50"><%= truncate(job.description, length: 80) %></p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fs-5 fw-bold family-gold">💰 <%= job.budget %></span>
+              <button class="btn btn-gold btn-sm fw-bold">詳細を見る</button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
