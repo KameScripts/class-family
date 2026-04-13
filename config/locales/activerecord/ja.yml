@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      user: 組員
+      job: シノギ
+    attributes:
+      user:
+        name: 組員名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        referrer: 紹介者
+      job:
+        title: 案件タイトル
+        description: 案件詳細
+        budget: 報酬
+        category: カテゴリ
+        deadline: 締切

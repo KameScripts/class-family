@@ -1,0 +1,22 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+  users:
+    new:
+      title: 新規組員登録
+    create:
+      success: 組に入ることができました。よろしくお願いします。
+      failure: 登録に失敗しました。入力内容を確認してください。
+  header:
+    new: 新規組員登録
+    shinogi: シノギ一覧
