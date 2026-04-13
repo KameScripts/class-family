@@ -110,3 +110,37 @@ textarea.auto-expand {
   min-height: 80px;
   transition: height 0.1s ease;
 }
+
+/* ── 新規組員登録ページ背景 ── */
+.new-member-bg {
+  min-height: 100vh;
+  background-image: url('/assets/new.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* ── 新規組員登録フォームカード ── */
+.register-card {
+  background-color: rgba(10, 10, 10, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(2px);
+
+  .card-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ── 送信ボタン（白背景・赤文字） ── */
+.btn-submit {
+  background-color: #fff;
+  border-color: #fff;
+  color: #cc0000;
+  &:hover {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+    color: #aa0000;
+  }
+}

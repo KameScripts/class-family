@@ -1,112 +1,114 @@
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <h1 class="text-center mb-4 fude-font" style="color: #FFD700 !important; font-size: 2.2rem;">新規組員登録</h1>
+<div class="new-member-bg">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <h1 class="text-center mb-4 fude-font" style="font-size: 2.4rem;">新規組員登録</h1>
 
-      <%= form_with model: @user, data: { controller: "auto-expand" } do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+        <%= form_with model: @user, data: { controller: "auto-expand" } do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
-        <%# ── DB に保存する項目 ── %>
-        <div class="card bg-dark border-gold mb-4">
-          <div class="card-header fude-font family-gold" style="font-size: 1.1rem;">組員情報（必須）</div>
-          <div class="card-body">
-            <div class="mb-3">
-              <%= f.label :name, '組員名（ユーザ名）', class: 'form-label fude-font family-gold' %>
-              <%= f.text_field :name, class: 'form-control bg-secondary text-white border-0', placeholder: '例: 鬼頭 誠司' %>
-            </div>
-            <div class="mb-3">
-              <%= f.label :email, 'メールアドレス', class: 'form-label fude-font family-gold' %>
-              <%= f.email_field :email, class: 'form-control bg-secondary text-white border-0', placeholder: 'rei@class-family.jp' %>
-            </div>
-            <div class="mb-3">
-              <%= f.label :password, 'パスワード', class: 'form-label fude-font family-gold' %>
-              <%= f.password_field :password, class: 'form-control bg-secondary text-white border-0' %>
-            </div>
-            <div class="mb-3">
-              <%= f.label :password_confirmation, 'パスワード確認', class: 'form-label fude-font family-gold' %>
-              <%= f.password_field :password_confirmation, class: 'form-control bg-secondary text-white border-0' %>
-            </div>
-            <div class="mb-3">
-              <%= f.label :referrer, '紹介者', class: 'form-label fude-font family-gold' %>
-              <%= f.text_field :referrer, class: 'form-control bg-secondary text-white border-0', placeholder: '誰に紹介されましたか？' %>
+          <%# ── DB に保存する項目 ── %>
+          <div class="card register-card mb-4">
+            <div class="card-header fude-font text-white" style="font-size: 1.1rem;">組員情報（必須）</div>
+            <div class="card-body">
+              <div class="mb-3">
+                <%= f.label :name, '組員名（ユーザ名）', class: 'form-label fude-font text-white' %>
+                <%= f.text_field :name, class: 'form-control bg-secondary text-white border-0', placeholder: '例: 鬼頭 誠司' %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :email, 'メールアドレス', class: 'form-label fude-font text-white' %>
+                <%= f.email_field :email, class: 'form-control bg-secondary text-white border-0', placeholder: 'rei@class-family.jp' %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :password, 'パスワード', class: 'form-label fude-font text-white' %>
+                <%= f.password_field :password, class: 'form-control bg-secondary text-white border-0' %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :password_confirmation, 'パスワード確認', class: 'form-label fude-font text-white' %>
+                <%= f.password_field :password_confirmation, class: 'form-control bg-secondary text-white border-0' %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :referrer, '紹介者', class: 'form-label fude-font text-white' %>
+                <%= f.text_field :referrer, class: 'form-control bg-secondary text-white border-0', placeholder: '誰に紹介されましたか？' %>
+              </div>
             </div>
           </div>
-        </div>
 
-        <%# ── 自由記述欄（DB に保存しない） ── %>
-        <div class="card bg-dark border-gold mb-4">
-          <div class="card-header fude-font family-gold" style="font-size: 1.1rem;">経歴書（任意・保存されません）</div>
-          <div class="card-body">
+          <%# ── 自由記述欄（DB に保存しない） ── %>
+          <div class="card register-card mb-4">
+            <div class="card-header fude-font text-white" style="font-size: 1.1rem;">経歴書（任意・保存されません）</div>
+            <div class="card-body">
 
-            <p class="text-white-50 small mb-3">以下の情報はデータベースには保存されません。面接の参考にするだけです。</p>
+              <p class="text-white-50 small mb-3">以下の情報はデータベースには保存されません。面接の参考にするだけです。</p>
 
-            <h6 class="fude-font family-gold mb-3" style="font-size: 1rem;">── 言語の経験年数 ──</h6>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Ruby
-                <span class="text-white-50 small" style="font-family: sans-serif;">（文法が易しく手軽にカタギを脅す時に使う言語）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Java
-                <span class="text-white-50 small" style="font-family: sans-serif;">（型が厳格で不意の一言で戦争にならないようヤクザ同士の口喧嘩の時に使う言語）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Python
-                <span class="text-white-50 small" style="font-family: sans-serif;">（計算処理に強く特殊詐欺をするときに使う言語）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
+              <h6 class="fude-font text-white mb-3" style="font-size: 1rem;">── 言語の経験年数 ──</h6>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Ruby
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（文法が易しく手軽にカタギを脅す時に使う言語）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Java
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（型が厳格で不意の一言で戦争にならないようヤクザ同士の口喧嘩の時に使う言語）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Python
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（計算処理に強く特殊詐欺をするときに使う言語）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
 
-            <h6 class="fude-font family-gold mt-4 mb-3" style="font-size: 1rem;">── フレームワークの経験年数 ──</h6>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Ruby on Rails
-                <span class="text-white-50 small" style="font-family: sans-serif;">（カタギを最高にチビらす現場のノウハウが詰まっている）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Spring
-                <span class="text-white-50 small" style="font-family: sans-serif;">（ヤクザ同士が楽しく喧嘩するためのルールが定められている）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
-            <div class="mb-3">
-              <label class="form-label fude-font text-white">
-                Django
-                <span class="text-white-50 small" style="font-family: sans-serif;">（多種多様な詐欺に対応している自由度が便利な道具セット）</span>
-              </label>
-              <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
-            </div>
+              <h6 class="fude-font text-white mt-4 mb-3" style="font-size: 1rem;">── フレームワークの経験年数 ──</h6>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Ruby on Rails
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（カタギを最高にチビらす現場のノウハウが詰まっている）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Spring
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（ヤクザ同士が楽しく喧嘩するためのルールが定められている）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white">
+                  Django
+                  <span class="text-white-50 small" style="font-family: sans-serif;">（多種多様な詐欺に対応している自由度が便利な道具セット）</span>
+                </label>
+                <input type="number" min="0" max="50" class="form-control bg-secondary text-white border-0" placeholder="年数">
+              </div>
 
-            <div class="mb-3 mt-4">
-              <label class="form-label fude-font family-gold" style="font-size: 1.05rem;">◯体を処理する際に工夫していたこと</label>
-              <textarea class="form-control bg-secondary text-white border-0 auto-expand"
-                        rows="3"
-                        placeholder="具体的なエピソードをお聞かせください..."></textarea>
-            </div>
+              <div class="mb-3 mt-4">
+                <label class="form-label fude-font text-white" style="font-size: 1.05rem;">◯体を処理する際に工夫していたこと</label>
+                <textarea class="form-control bg-secondary text-white border-0 auto-expand"
+                          rows="3"
+                          placeholder="具体的なエピソードをお聞かせください..."></textarea>
+              </div>
 
-            <div class="mb-3">
-              <label class="form-label fude-font family-gold" style="font-size: 1.05rem;">目の前に困っている人がいたらどうしますか？</label>
-              <textarea class="form-control bg-secondary text-white border-0 auto-expand"
-                        rows="3"
-                        placeholder="あなたの行動指針をお聞かせください..."></textarea>
-            </div>
+              <div class="mb-3">
+                <label class="form-label fude-font text-white" style="font-size: 1.05rem;">目の前に困っている人がいたらどうしますか？</label>
+                <textarea class="form-control bg-secondary text-white border-0 auto-expand"
+                          rows="3"
+                          placeholder="あなたの行動指針をお聞かせください..."></textarea>
+              </div>
 
+            </div>
           </div>
-        </div>
 
-        <div class="text-center mt-4">
-          <%= f.submit '送信', class: 'btn btn-gold btn-lg px-5 fude-font', style: 'font-size: 1.2rem;' %>
-        </div>
-      <% end %>
+          <div class="text-center mt-4 pb-5">
+            <%= f.submit '送信', class: 'btn btn-submit btn-lg px-5 fude-font', style: 'font-size: 1.2rem;' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
