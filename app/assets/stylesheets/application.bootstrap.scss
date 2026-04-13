@@ -133,26 +133,30 @@ textarea.auto-expand {
   }
 }
 
-/* ── 送信ボタン（白背景・赤文字） ── */
+/* ── フォームボタン共通（半透明黒背景・薄白枠） ── */
+.btn-submit,
+.btn-cancel {
+  background-color: rgba(10, 10, 10, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  &:hover, &:focus, &:active {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+/* ── 送信ボタン（赤文字） ── */
 .btn-submit {
-  background-color: #fff;
-  border-color: #fff;
   color: #cc0000 !important;
   &:hover, &:focus, &:active {
-    background-color: #f0f0f0;
-    border-color: #f0f0f0;
     color: #aa0000 !important;
   }
 }
 
-/* ── 止めるボタン（透明・白枠・白文字） ── */
+/* ── 戻るボタン（白文字） ── */
 .btn-cancel {
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff !important;
   &:hover, &:focus {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
     color: #fff !important;
   }
 }
