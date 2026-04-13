@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import AutoExpandController from "./auto_expand_controller"
+application.register("auto-expand", AutoExpandController)

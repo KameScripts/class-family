@@ -1,6 +1,6 @@
 <div class="container py-5">
   <div class="d-flex align-items-center mb-5">
-    <h1 class="family-gold fw-bold mb-0">💼 シノギ一覧</h1>
+    <h1 class="family-gold fw-bold mb-0">シノギ一覧</h1>
     <span class="badge bg-gold text-dark ms-3 fs-6"><%= @jobs.count %> 件</span>
   </div>
 
@@ -22,7 +22,7 @@
               <p class="card-text text-white-50"><%= truncate(job.description, length: 80) %></p>
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center">
-              <span class="fs-5 fw-bold family-gold">💰 <%= job.budget %></span>
+              <span class="fs-5 fw-bold family-gold"><%= job.budget %></span>
               <button class="btn btn-gold btn-sm fw-bold">詳細を見る</button>
             </div>
           </div>
