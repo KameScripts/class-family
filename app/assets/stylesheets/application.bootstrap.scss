@@ -1,12 +1,20 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-/* ── 筆書体フォント ── */
+/* ── 毛筆書体（Yuji Syuku は Regular のみ） ── */
 .fude-font {
-  font-family: 'Kaisei Decol', serif !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em;
+  font-family: 'Yuji Syuku', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
   color: #fff !important;
+  text-shadow:
+    1px 1px 0px rgba(0,0,0,0.8),
+    2px 2px 4px rgba(0,0,0,0.6);
+  /* navbar-brand のリンク色を確実に上書き */
+  &:hover, &:visited, &:focus {
+    color: #fff !important;
+    text-decoration: none;
+  }
 }
 
 /* ── テーマカラー ── */
