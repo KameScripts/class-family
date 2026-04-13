@@ -1,2 +1,88 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+/* ── テーマカラー ── */
+$family-black: #1a1a1a;
+$family-gold:  #FFD700;
+
+.family-gold {
+  color: $family-gold !important;
+}
+
+.bg-family-black {
+  background-color: $family-black !important;
+}
+
+.border-gold {
+  border: 1px solid $family-gold !important;
+}
+
+.btn-gold {
+  background-color: $family-gold;
+  border-color: $family-gold;
+  color: $family-black;
+  font-weight: bold;
+  &:hover {
+    background-color: darken($family-gold, 10%);
+    border-color: darken($family-gold, 10%);
+    color: $family-black;
+  }
+}
+
+.bg-gold {
+  background-color: $family-gold !important;
+}
+
+/* ── トップページ fade-in ── */
+.fade-in-image {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── 唇クリッカブルエリア ── */
+.lips-link {
+  position: absolute;
+  /* 画像内の中央男性の唇あたり（パーセント指定で画像サイズに追従） */
+  left: 44%;
+  top: 62%;
+  width: 12%;
+  height: 6%;
+  display: block;
+  cursor: pointer;
+  /* デバッグ時は下記をコメントアウト解除 */
+  /* background: rgba(255, 0, 0, 0.3); */
+}
+
+/* ── シノギ一覧カード ── */
+.job-card {
+  background-color: #2a2a2a;
+  border: 1px solid #FFD700;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+  }
+
+  .card-header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #FFD700;
+  }
+
+  .card-footer {
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+  }
+}
+
+.category-badge {
+  background-color: $family-gold;
+  color: $family-black;
+  font-weight: bold;
+}
