@@ -145,18 +145,18 @@ textarea.auto-expand {
   }
 }
 
-/* ── 送信ボタン（赤文字） ── */
+/* ── 送信ボタン（くすんだ金色） ── */
 .btn-submit {
-  color: #cc0000 !important;
+  color: #B8940A !important;
   &:hover, &:focus, &:active {
-    color: #aa0000 !important;
+    color: #9A7C08 !important;
   }
 }
 
-/* ── 戻るボタン（白文字） ── */
+/* ── 戻るボタン（赤文字） ── */
 .btn-cancel {
-  color: #fff !important;
+  color: #cc0000 !important;
   &:hover, &:focus {
-    color: #fff !important;
+    color: #aa0000 !important;
   }
 }
